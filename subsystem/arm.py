@@ -16,7 +16,7 @@ class gearbox():
         self.topMotor.set(ctre.ControlMode.PercentOutput, percentage)
 
 
-class Drivetrain(Subsystem):
+class Arm(Subsystem):
     left = gearbox(
         config.gearbox.left.motorLeft_CAN,
         config.gearbox.left.motorRight_CAN,
