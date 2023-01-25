@@ -3,30 +3,17 @@ from commands2 import Subsystem
 import ctre
 import config
 
-class gearbox():
+class CIM():
 
-    def __init__(self, leftMotor, rightMotor, side):
-        self.leftMotor = leftMotor
-        self.rightMotor = rightMotor
-        self.side = side
-        # self.leftMotor.follow(self.topMotor)
-        # self.rightMotor.follow(self.topMotor)
+    def __init__(self, motor):
+        self.motor = motor
 
     def setSpeed(self, percentage):
-        self.topMotor.set(ctre.ControlMode.PercentOutput, percentage)
+        self.motor.set(ctre.ControlMode.PercentOutput, percentage)
 
 
 class Arm(Subsystem):
-    left = gearbox(
-        config.gearbox.left.motorLeft_CAN,
-        config.gearbox.left.motorRight_CAN,
-        "left"
-    )
-
-    right = gearbox(
-        config.gearbox.right.motorLeft_CAN,
-        config.gearbox.right.motorRight_CAN,
-        "right"
-    )
+    
+    motor = CIM(config.CIM.arm.motor_CAN)
 
 
