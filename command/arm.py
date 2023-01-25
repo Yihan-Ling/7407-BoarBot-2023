@@ -1,54 +1,34 @@
 import commands2
 import config
 import ctre
-from subsystem import Drivetrain
+from subsystem import Arm
 from robotpy_toolkit_7407.command import SubsystemCommand
 from oi.keymap import Keymap
 from robot_systems import Robot
 # from sensors import Pigeon2
 import constants
 
-class drivetrainCostum(commands2.CommandBase):
+'''
+TODO: Change the arm direction and speed accordingly 
+'''
+class armMove(commands2.CommandBase):
 
-    def __init__(self, subsystem: Drivetrain) -> None:
+    def __init__(self, direction, subsystem: Arm):
         super().__init__()
         self.subsystem = subsystem
+        self.direction = direction
 
     def initialize(self) -> None:
         pass
 
+    def execute(self):
+        Arm.motor.setSpeed(self.direction*0.5)
 
-    def execute(self) -> None:
+    def end(self, interrupted):
+        Arm.motor.setSpeed(0)
 
-        def deadZone(value):
-            if value < -0.15 or value > 0.15:
-                return value
-            else:
-                return 0
-
-        print(Pigeon2.get_absolute_robot_heading())    
-
-        if constants.driveType == "tank":
-            left = Keymap.Drivetrain.LEFT_AXIS_Y.value
-            right = Keymap.Drivetrain.RIGHT_AXIS_Y.value
-            self.subsystem.left.setSpeed(deadZone(-left))
-            self.subsystem.right.setSpeed(deadZone(right))
-        if constants.driveType == "arcade":
-            movement = Keymap.Drivetrain.LEFT_AXIS_Y.value
-            rotation = Keymap.Drivetrain.LEFT_AXIS_X.value
-            self.subsystem.left.setSpeed(deadZone(-movement + rotation))
-            self.subsystem.right.setSpeed(deadZone(movement + rotation))
-        if constants.driveType == "diff":
-            movement = Keymap.Drivetrain.LEFT_AXIS_Y.value
-            rotation = Keymap.Drivetrain.RIGHT_AXIS_X.value
-            self.subsystem.left.setSpeed(deadZone(-movement + rotation))
-            self.subsystem.right.setSpeed(deadZone(movement + rotation))
-
-    def end(self, interrupted) -> None:
-        pass
-
-    def isFinished(self) -> bool:
+    def isFinished(self):
         return False
+        # return the button is pressed 
 
-    def runsWhenDisabled(self) -> bool:
-        return False
+    

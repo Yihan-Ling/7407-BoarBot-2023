@@ -34,8 +34,11 @@ class _Robot(wpilib.TimedRobot):
         commands2.CommandScheduler.getInstance().schedule(command.drivetrainCustom(Robot.drivetrain))
 
     def teleopPeriodic(self):
-
-        pass
+        
+        if 1:   # if something on the controller
+            commands2.CommandScheduler.getInstance().schedule(command.armMove(1, Robot.arm))
+        else:
+            commands2.CommandScheduler.getInstance().schedule(command.armMove(-1, Robot.arm))
 
     def autonomousInit(self):
         pass
