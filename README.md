@@ -1,11 +1,11 @@
 
-# 7407-DriveCode-22-23
+# 7407 BoarBot 2023 Code
 
-Team 7407 Wired Boars 2022-2023 Robot Code
+> This project uses **[7407-DriveCode-{TEMPLATE}](https://github.com/Choate-Robotics/7407-DriveCode-Template)** as template
 
 ## File Tree:
 ```
-7407-DriveCode-22-23
+7407-BoarBoT-2023
 ├── autonomous (Contains autonomous routines for robot)
 ├── command (Contains commands for command scheduling)
 │   └── __init__.py
@@ -177,5 +177,8 @@ To integrate a branch with branch **Main**,  create a pull-request with the same
  - [Chief Delphi](https://www.chiefdelphi.com/) Many a sensor problem have been fixed by looking here.
  - [7407 DriveCode-2021-Python](https://github.com/Choate-Robotics/7407-DriveCode-2021-Python) Worlds level code!
 
-## Special Notes
+## Special Notes & TODOs
  - In ***config.py*** change the *ESC* in the **gearbox** class based on actual usage in the robot
+	- Initial decision of 7407 BoarBot was VictorSPX, so the code uses VictorSPX as the ESC
+	
+ - Change the github source links in the README.md

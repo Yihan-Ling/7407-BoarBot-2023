@@ -3,7 +3,7 @@ import ctre
 '''
 TODO: 
  * Change the ESC depends on what we are using
- - determined VictorSPX √
+    - determined VictorSPX √
 
  * Change the ESC port numbers to what we are using
 
