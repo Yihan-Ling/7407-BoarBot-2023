@@ -9,11 +9,10 @@ class gearbox():
         self.leftMotor = leftMotor
         self.rightMotor = rightMotor
         self.side = side
-        # self.leftMotor.follow(self.topMotor)
-        # self.rightMotor.follow(self.topMotor)
+        self.rightMotor.follow(self.leftMotor)
 
     def setSpeed(self, percentage):
-        self.topMotor.set(ctre.ControlMode.PercentOutput, percentage)
+        self.leftMotor.set(ctre.ControlMode.PercentOutput, percentage)
 
 
 class Drivetrain(Subsystem):
