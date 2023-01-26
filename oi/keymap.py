@@ -13,6 +13,7 @@ class Controllers:
 
 
 class Keymap:
+
     class Drivetrain:
         # Left_Wheels_Speed = JoystickAxis(Controllers.DRIVER, DriverCONTROLLER.L_JOY[1])
         # if (Left_Wheels_Speed < 0.2 and Left_Wheels_Speed > -0.2):
@@ -28,4 +29,12 @@ class Keymap:
         DRIVE_STYLE = DefaultButton(Controllers.DRIVER, DriverCONTROLLER.SELECT)
         CENTRIC = DefaultButton(DriverCONTROLLER, DriverCONTROLLER.START)
         RESET_GYRO = DefaultButton(DriverCONTROLLER, DriverCONTROLLER.A)
-    pass
+
+
+    class Arm:
+        LEFT_B = DefaultButton(DriverCONTROLLER, DriverCONTROLLER.LB)
+        RIGHT_B = DefaultButton(DriverCONTROLLER, DriverCONTROLLER.RB)
+        
+
+    
+    

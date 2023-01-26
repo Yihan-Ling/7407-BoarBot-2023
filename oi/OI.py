@@ -2,7 +2,9 @@ from robotpy_toolkit_7407.utils import logger
 import constants
 from oi.keymap import Keymap
 from robot_systems import Robot, Sensors, Pneumatics
+import command
 logger.info("Hi, I'm OI!")
+import commands2
 
 
 class OI:
@@ -30,3 +32,9 @@ class OI:
             return
 
     Keymap.Drivetrain.DRIVE_STYLE().whenPressed(driveStyle)
+    Keymap.Arm.LEFT_B().whenPressed(
+        commands2.CommandScheduler.getInstance().schedule(command.armMove(-1, Robot.arm))
+    )
+    Keymap.Arm.RIGHT_B().whenPressed(
+        commands2.CommandScheduler.getInstance().schedule(command.armMove(1, Robot.arm))
+    )

@@ -5,7 +5,7 @@ from subsystem import Arm
 
 
 class Robot:
-    drivetrain = Drivetrain()
+    # drivetrain = Drivetrain()
     arm = Arm()
 
 
