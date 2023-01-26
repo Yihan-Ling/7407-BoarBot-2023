@@ -37,7 +37,7 @@ class _Robot(wpilib.TimedRobot):
         
         if 1:   # if something on the controller
             commands2.CommandScheduler.getInstance().schedule(command.armMove(1, Robot.arm))
-        else:
+        if 1:   # if something on the controller 
             commands2.CommandScheduler.getInstance().schedule(command.armMove(-1, Robot.arm))
 
     def autonomousInit(self):

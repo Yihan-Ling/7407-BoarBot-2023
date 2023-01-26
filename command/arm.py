@@ -22,13 +22,16 @@ class armMove(commands2.CommandBase):
         pass
 
     def execute(self):
-        Arm.motor.setSpeed(self.direction*0.5)
+        Arm.motor.setSpeed(self.direction*constants.armSpeed)
 
     def end(self, interrupted):
         Arm.motor.setSpeed(0)
 
     def isFinished(self):
+        # if not button pressed:
+            # return True
+        # if lowerbond or upperbond:
+        #     return True
         return False
-        # return the button is pressed 
 
     
