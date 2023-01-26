@@ -7,8 +7,6 @@ TODO:
 
 '''
 
-
-
 class gearbox:
 
     class left:
@@ -20,3 +18,7 @@ class gearbox:
 
         motorLeft_CAN = ctre.VictorSPX(3)
         motorRight_CAN = ctre.VictorSPX(4)
+
+class claw:
+    
+    motor_CAN = ctre.VictorSPX(6)
