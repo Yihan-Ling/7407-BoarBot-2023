@@ -8,7 +8,7 @@ from robot_systems import Robot
 # from sensors import Pigeon2
 import constants
 
-class drivetrainCostum(commands2.CommandBase):
+class drivetrainCustom(commands2.CommandBase):
 
     def __init__(self, subsystem: Drivetrain) -> None:
         super().__init__()
@@ -26,7 +26,7 @@ class drivetrainCostum(commands2.CommandBase):
             else:
                 return 0
 
-        print(Pigeon2.get_absolute_robot_heading())    
+        # print(Pigeon2.get_absolute_robot_heading())    
 
         if constants.driveType == "tank":
             left = Keymap.Drivetrain.LEFT_AXIS_Y.value

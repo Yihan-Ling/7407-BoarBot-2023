@@ -32,6 +32,7 @@ class _Robot(wpilib.TimedRobot):
 
     def teleopInit(self):
         commands2.CommandScheduler.getInstance().schedule(command.drivetrainCustom(Robot.drivetrain))
+        pass
 
     def teleopPeriodic(self):
 

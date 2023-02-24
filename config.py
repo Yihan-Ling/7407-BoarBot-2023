@@ -13,10 +13,10 @@ class gearbox:
 
     class left:
 
-        motorLeft_CAN = ctre.VictorSPX(0)
-        motorRight_CAN = ctre.VictorSPX(1)
+        motorLeft_CAN = ctre.VictorSPX(12)
+        motorRight_CAN = ctre.VictorSPX(13)
 
     class right:
 
-        motorLeft_CAN = ctre.VictorSPX(3)
-        motorRight_CAN = ctre.VictorSPX(4)
+        motorLeft_CAN = ctre.VictorSPX(15)
+        motorRight_CAN = ctre.VictorSPX(14)
